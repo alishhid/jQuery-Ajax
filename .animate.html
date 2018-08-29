@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <title>动画效果</title>
+    <script>
+        // 当使用 animate() 时，必须使用 Camel 标记法书写所有的属性名，比如，必须使用 paddingLeft 而不是 padding-left，使用 marginRight 而不是 margin-right，等等。
+        // 同时，色彩动画并不包含在核心 jQuery 库中。如果需要生成颜色动画，您需要从 jQuery.com 下载 Color Animations 插件。
+        
+        // text 1 实现元素的位移以及大小的的变换
+
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $("div").animate({
+        //             left: '+=250px',
+        //             height: '+=150px',
+        //             width: '+=150px'
+        //         });
+        //     });
+        // });
+
+        // text 2 实现动态的元素的变化
+            
+        // $(document).ready(function () {
+        //     $("button").click(function () { 
+        //         var div=$("div");
+        //         div.animate({height:'500px',opacity:'0.4'},1000);
+        //         div.animate({width:'500px',opacity:'0.8'},1000);
+        //         div.animate({height:'200px',opacity:'0.4'},1000);
+        //         div.animate({width:'200px',opacity:'0.8'},1000);
+        //     });
+        // });
+
+        // text 3 实现元素的移动以及字体的变化
+
+        $(document).ready(function () {
+            $("button").click(function () { 
+                var div=$("div");
+                div.animate({left:'400px'},1000);
+                div.animate({fontSize:'200px'},1000); 
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>开始动画</button>
+    <p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+    <div style="background:#98bf21;height:200px;width:650px;position:absolute;">
+    </div>
+    <div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+</body>
+
+</html>
