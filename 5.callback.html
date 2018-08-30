@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <title>动画的完成后执行的函数</title>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () { 
+                $("p").hide(1000,function(){
+                    alert("文字已经隐藏了");
+                }); 
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button type="button">隐藏</button>
+    <p>这里有段文字</p>
+</body>
+
+</html>
