@@ -10,19 +10,19 @@
 
         $(document).ready(function () {
             // text() - 设置或返回所选元素的文本内容
-            $("#text1").click(function () {
+            $("#test1").click(function () {
                 alert("Text: " + $("#doc").text());
             });
             // html() - 设置或返回所选元素的内容（包括 HTML 标记）
-            $("#text2").click(function () {
+            $("#test2").click(function () {
                 alert("Html: " + $("#doc").html());
             });
             // val() - 设置或返回表单字段的值
-            $("#text3").click(function () { 
+            $("#test3").click(function () { 
                 alert("你输入的值是： " + $("#value").val()); 
             });
             // attr() - 用于设置或返回属性值。
-            $("#text4").click(function () { 
+            $("#test4").click(function () { 
                 alert($("#property").attr("href"));
             });
         });
@@ -31,14 +31,14 @@
 
 <body>
     <p id="doc">这是段落中的<b>粗体</b>文本。</p>
-    <button id="text1">显示文本</button>
-    <button id="text2">显示 HTML</button>
+    <button id="test1">显示文本</button>
+    <button id="test2">显示 HTML</button>
 
     <p>您要输入的内容：<input type="text" id="value" value="内容"></p>
-    <button id="text3">显示输入的内容</button>
+    <button id="test3">显示输入的内容</button>
 
     <p><a href="http://www.w3school.com.cn" id="property">W3School.com.cn</a></p>
-    <button id="text4">显示属性值</button>
+    <button id="test4">显示属性值</button>
 </body>
 
 </html>

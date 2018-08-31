@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jquery添加元素</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script>
+        // text 1 jQuery append() 方法在被选元素的结尾插入内容。
+        $(document).ready(function () {
+
+            // test 1 append() 方法在被选元素的结尾插入内容。
+            $("#btn1").click(function () {
+                // <b>为加粗字体
+                $("p").append(" <b> Appended text</b>.");
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <button id="btn1">追加文本</button>
+</body>
+
+</html>
