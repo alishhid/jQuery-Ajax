@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery元素的删除操作</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () { 
+                $("div").remove();
+           });
+
+           $("#btn2").click(function () { 
+               $("#div1").empty();
+           });
+        });
+    </script>
+</head>
+<body>
+    <div id="div1" style="background-color:red;width: 400px;height: 200px;">
+        <div>这也是div 为了凸显这个函数的效果</div>
+        <div>这是另一个div</div>
+    </div>
+    <button id="btn1">点击这里可以让整个div消失</button>
+    <button id="btn2">点击这里让div里面的元素消失</button>
+</body>
+</html>
