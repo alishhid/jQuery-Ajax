@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>text()、html() 以及 val() 的回调函数</title>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
     <script>
-        
+        // 回调函数由两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。然后以函数新值返回您希望使用的字符串。
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#text1").text(function (i, origText) {
+                    return "Old text: " + origText + " New text: hello (index: " + 1 + ")";
+                });
+            });
+
+            $("#btn2").click(function () {
+                $("#text2").html(function (i, origText) {
+                    return "old html:" + origText + " new html: hello <b>world!</b> (index: " + i + ")";
+
+                });
+            });
+        });
     </script>
 </head>
+
 <body>
-    
+    <p id="text1">这是<b>粗体</b>文本。</p>
+    <p id="text2">这是另一段<b>粗体</b>文本。</p>
+    <button id="btn1">显示旧/新文本</button>
+    <button id="btn2">显示旧/新 HTML</button>
 </body>
+
 </html>
