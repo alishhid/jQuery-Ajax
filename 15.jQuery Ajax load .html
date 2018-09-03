@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery ajax的加载方法</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () { 
+                // load() 方法从服务器加载数据，并把返回的数据放入被选元素中
+                // 网站上写的不是此位置，这里的txt文件是我自己在电脑上创建的文件
+                // $("#div1").load("demo_test.txt"); 
+
+                // jQuery 选择器添加到 URL 参数。
+                // 下面的例子把 "demo_test.txt" 文件中 id="p1" 的元素的内容，加载到指定的 <div> 元素中
+                // $("#div1").load("demo_test.txt #p1");
+
+
+                // 回调函数可以设置不同的参数：
+                // responseTxt - 包含调用成功时的结果内容
+                // statusTXT - 包含调用的状态
+                // xhr - 包含 XMLHttpRequest 对象
+            $("#div1").load("demo_test.txt",function(responseTxt,statusTxt,xhr) {
+                if(statusTxt=="success")
+                    alert("外部内容加载成功！");
+                if(statusTxt=="error")
+                    alert("Error: "+xhr.status+": "+xhr.statusText);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="div1" style="font-size: 20px;">请点击下面的按钮，通过 jQuery AJAX 改变这段文本。</div>
+    <button id="btn1" type="button">获得外部的内容</button>
+</body>
+
+</html>
