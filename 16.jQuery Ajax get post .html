@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>get post 方法</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $.get("demo_test.asp", function (data, status) {
+                    alert("数据：" + data + "\n状态：" + status);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btn1">向页面发送 HTTP GET 请求，然后获得返回的结果</button>
+</body>
+
+</html>
