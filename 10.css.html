@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>返回和设置属性值</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            // test 1返回首个匹配元素的属性值\
+            $("#btn1").click(function () { 
+                alert("background color = " + $("#test1").css("background-color"));
+            });
+
+            // test 2 设置css属性值
+            $("#btn2").click(function () { 
+                $("#test2").css({"background-color":"black","font-size":"150%"});
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <h2>这是一个标题</h2>
+    <p id="test1" style="background-color:#ff0000">这里有一段文字</p>
+    <p>这里也有一段文字</p>
+    <p id="test2" style="background-color:blue">这里还有一段文字</p>
+    <button id="btn1">返回颜色值</button>
+    <button id="btn2">设置属性值</button>
+</body>
+</html>
