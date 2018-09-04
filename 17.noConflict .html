@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>在一个页面上同时使用jQuery和别的框架</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script>
+        // noConflict() 方法会释放会 $ 标识符的控制，这样其他脚本就可以使用它了。
+        // test 1
+        // $.noConflict();
+        // jQuery(document).ready(function () {
+        //     jQuery("#btn1").click(function () {
+        //         jQuery("p").text("jquery 还在运行");
+        //     });
+        // });
+
+        // test 2
+        const jq = $.noConflict();
+        jq(document).ready(function () {
+            jq("#btn2").click(function () { 
+                jq("p").text("jquery 还在运行");
+            });
+        });
+
+        // test 3
+        // $.noConflict();
+        // jquery(document).ready(function($){
+        //     $("#btn2").click(function(){
+        //         $("p").text("jquery 还在运行");
+        //     });
+        // });
+    </script>
+</head>
+
+<body>
+    <p>这是一个段落。</p>
+    <button id="btn1">测试 jQuery</button>
+    <button id="btn2">第二个测试</button>
+</body>
+
+</html>
