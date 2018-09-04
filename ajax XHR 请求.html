@@ -20,7 +20,9 @@
                     document.getElementById("div1").innerHTML=xmlhttp.responseText;
                 }
             }
-            xmlhttp.open("GET","demo_get.asp",true);
+            xmlhttp.open("GET","demo_get.asp?t=" + Math.random(),true);
+            // post方法
+            // xmlhttp.open("POST","demo_post.asp",true);
             xmlhttp.send();
         }
     </script>
