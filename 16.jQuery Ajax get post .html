@@ -8,7 +8,7 @@
     <script>
         $(document).ready(function () {
             $("#btn1").click(function () {
-                // asp 或者php文件格式有问题，且暂时不知道如何解决，后期会解决此问题
+                // 暂时解决这个问题但是数据不能正常显示
                 $.get("demo_test.asp", function (data, status) {
                     alert("数据：" + data + "\n状态：" + status);
                 });
