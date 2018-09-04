@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Ajax XHR请求</title>
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp;
+            if(window.XMLHttpRequest){
+                //code for ie7+,firefox,chrome,opera,safari
+                xmlhttp =new XMLHttpRequest();
+            }
+            else{
+                //code for ie6 ie5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function(){
+                if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                    document.getElementById("div1").innerHTML=xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET","demo_get.asp",true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+
+<body>
+    <h2>AJAX</h2>
+    <button type="button" onclick="loadXMLDoc()">请求数据</button>
+    <div id="div1"></div>
+
+</body>
+
+</html>
