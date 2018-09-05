@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>服务器响应的方法</title>
+    <script>
+        function loadXMLDoc(){
+            let xmlhttp;
+            if (window,XMLHttpRequest){
+                // code for ie7+,firefox,chrome,opera,safari
+                xmlhttp=new XMLHttpRequest();
+            }
+            else{
+                // code for ie5,ie6
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function () {
+                if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                    // responseText 获得字符串形式的响应数据
+                    // document.getElementById("div1").innerHTML=xmlhttp.responseText;
+                    //}
+                    //xmlhttp.open("GET","test1.txt",true);
+                    //xmlhttp.send();
+                //}
+
+            // 如果来自服务器的响应是 XML，而且需要作为 XML 对象进行解析，请使用 responseXML 属性：
+            // 请求 books.xml 文件，并解析响应：
+            // 下面是一个使用responseXML例子
+            xmlDoc=xmlhttp.responseXML;
+            txt="";
+            x=xmlDoc.getElementsByTagName("title");
+            for (i=0;i<x.length;i++)
+                {
+                txt=txt + x[i].childNodes[0].nodeValue + "<br />";
+                }
+            document.getElementById("div1").innerHTML=txt;
+                }
+            }
+            xmlhttp.open("GET","books.xml",true);
+            xmlhttp.send();
+            }
+              
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <h2>Let AJAX change this text</h2>
+    </div>
+    <button type="button" onclick="loadXMLDoc()">通过 AJAX 改变内容</button>
+
+</body>
+
+</html>
