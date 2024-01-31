@@ -1,1 +1,1 @@
-<p>This is some text from an external ASP file.</p>
+<p>This is some text for testing and understanding.</p>
